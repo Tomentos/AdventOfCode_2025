@@ -29,7 +29,7 @@ prompt.get(schema, function (err, input) {
     }
 
     //Create path from user input
-    var path = `./puzzle${input.day}/chall${input.challenge}.js`;
+    var path = `./day${input.day}/chall${input.challenge}.js`;
 
     //Execute script as child process
     const result = cp.fork(path);

@@ -2,7 +2,7 @@
 const fs = require('fs');
 
 //Read input data
-fs.readFile('./puzzle1/input.txt', 'utf8', (err, data) => {
+fs.readFile('./day1/input.txt', 'utf8', (err, data) => {
 
     //Error event for readFile function
     if (err) {
