@@ -28,15 +28,14 @@ fs.readFile('./day3/input.txt', 'utf8', (err, data) => {
                 second = i + 1;
             }
         }
-        for (let j = second; j < bank.length; j++) {
-            if (bank[j] > bank[second]) {
-                second = j;
+        for (let i = second; i < bank.length; i++) {
+            if (bank[i] > bank[second]) {
+                second = i;
             }
         }
         
         var jolts = `${bank[first]}${bank[second]}`;
         result += parseInt(jolts);
-        console.log(jolts)
     }
 
     //Send back result
