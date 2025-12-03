@@ -1,5 +1,4 @@
 //Import required libraries
-const { subscribe } = require('diagnostics_channel');
 const fs = require('fs');
 
 //Read input data
@@ -53,6 +52,7 @@ fs.readFile('./day2/input.txt', 'utf8', (err, data) => {
         }
     }
 
-    //Print on result
-    console.log(result);
+    //Send back result
+    process.send( result );
+    process.exit(0);
 });

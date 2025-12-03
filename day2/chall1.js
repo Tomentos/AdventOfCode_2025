@@ -39,6 +39,7 @@ fs.readFile('./day2/input.txt', 'utf8', (err, data) => {
         }
     }
 
-    //Print result
-    console.log(result);
+    //Send back result
+    process.send( result );
+    process.exit(0);
 });

@@ -1,5 +1,5 @@
 //Import Modules
-const cp = require('child_process');
+const { fork } = require('child_process');
 const prompt = require('prompt');
 
 //Define Prompt Scheme
@@ -32,8 +32,14 @@ prompt.get(schema, function (err, input) {
     var path = `./day${input.day}/chall${input.challenge}.js`;
 
     //Execute script as child process
-    const result = cp.fork(path);
+    const child = fork(path);
 
-    //Do not print the result variable as it only contains debugging data
-    //console.log(result);
+    //Print returned process messages
+    child.on('message', (msg) => {
+        console.log(`\nOutput: ${msg}`);
+    });
+    child.on('close', (code) => {
+        console.log(`Script finished with code ${code}`);
+    });
+
 });

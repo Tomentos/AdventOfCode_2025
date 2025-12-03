@@ -1,7 +1,7 @@
 {
-    "name": "adventofcode2023",
+    "name": "adventofcode2025",
     "version": "1.0.0",
-    "description": "Advent of Code 2023 Personal Write-Up",
+    "description": "Advent of Code 2025 Personal Write-Up",
     "main": "main.js",
     "scripts": {
         "main": "node main.js"
