@@ -40,6 +40,6 @@ fs.readFile('./day2/input.txt', 'utf8', (err, data) => {
     }
 
     //Send back result
-    process.send( result );
+    process.send(result);
     process.exit(0);
 });
