@@ -28,12 +28,23 @@ prompt.get(schema, function (err, input) {
         return;
     }
 
-    //Create path from user input
+    //Create path variables from user input
     var path = `./day${input.day}/chall${input.challenge}.js`;
+    var puzzle = ``;
+
+    //Generate path for either test or input file
+    if (process.argv[2] === `-test`) {
+        puzzle = `./day${input.day}/test.txt`;
+    } else if (process.argv[2] === undefined) {
+        puzzle = `./day${input.day}/input.txt`;
+    } else {
+        console.log(`Error generating path for input file\nNon-existent flag was set\nExiting...`);
+        return;
+    }
 
     //Execute script as child process
     var timer = Date.now();
-    const child = fork(path);
+    const child = fork(path, [puzzle]);
 
     //Print returned process messages
     child.on('message', (msg) => {
