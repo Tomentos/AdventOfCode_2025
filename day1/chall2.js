@@ -6,8 +6,8 @@ fs.readFile('./day1/input.txt', 'utf8', (err, data) => {
 
     //Error event for readFile function
     if (err) {
-        console.log('Error when reading input.txt File.\nMake sure the file exists and contains the correct contents.\n' + err);
-        return;
+        process.send('Error when reading input.txt File.\nMake sure the file exists and contains the correct contents.\n' + err);
+        process.exit(1);
     }
 
     //Split the input into it's seperate lines
